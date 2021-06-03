@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{D954232D-4667-656D-1929-875D3587A471}</ProjectGuid>
+    <ProjectGuid>{E18FA1D3-811F-ED24-E2DF-E2F5B7334A92}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -47,7 +47,7 @@
   <PropertyGroup>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
-    <UnityProjectGeneratorVersion>4.10.2.0</UnityProjectGeneratorVersion>
+    <UnityProjectGeneratorVersion>4.9.1.0</UnityProjectGeneratorVersion>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2019.4.26f1</UnityVersion>
@@ -64,6 +64,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\GameManager.cs" />
+    <Compile Include="Assets\Script\MatchSettings.cs" />
+    <Compile Include="Assets\Script\Player.cs" />
     <Compile Include="Assets\Script\PlayerControler.cs" />
     <Compile Include="Assets\Script\PlayerMotor.cs" />
     <Compile Include="Assets\Script\PlayerSetup.cs" />
@@ -74,6 +77,7 @@
     <None Include="Assets\ScriptTemplates\56-Mirror__Network Discovery-NewNetworkDiscovery.cs.txt" />
     <None Include="Assets\Mirror\Version.txt" />
     <None Include="Assets\Mirror\Readme.txt" />
+    <None Include="Assets\multiplayer-fps-assets\README.txt" />
     <None Include="Assets\ScriptTemplates\52-Mirror__Network Behaviour-NewNetworkBehaviour.cs.txt" />
     <None Include="Assets\Mirror\Notice.txt" />
     <None Include="Assets\Mirror\Plugins\Mono.Cecil\License.txt" />
@@ -264,16 +268,16 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.26f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="Mono.CecilX">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.dll</HintPath>
     </Reference>
     <Reference Include="Mono.CecilX.Mdb">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Mdb.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Mdb.dll</HintPath>
     </Reference>
     <Reference Include="Mono.CecilX.Pdb">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Pdb.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Pdb.dll</HintPath>
     </Reference>
     <Reference Include="Mono.CecilX.Rocks">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Rocks.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Assets/Mirror/Plugins/Mono.Cecil/Mono.CecilX.Rocks.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.26f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -621,84 +625,84 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.26f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/PC_Janne/FPS MIRROR/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/User/fps-mirror/FPS MIRROR (1)/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Mirror.Weaver.csproj">
-      <Project>{8DBA4BFD-1BDD-7751-EC24-1208AFA0D42A}</Project>
+      <Project>{3FC61CA8-FF83-6CE1-D7EB-D6DB99517FB6}</Project>
       <Name>Mirror.Weaver</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Authenticators.csproj">
-      <Project>{CEED76AE-4DE9-0F91-A1CE-8E3F0F956F5A}</Project>
+      <Project>{972D37A8-028A-C9DC-EBDF-E3973D6BBCD1}</Project>
       <Name>Mirror.Authenticators</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Components.csproj">
-      <Project>{4C460B6B-283A-C718-6809-32046979E8C7}</Project>
+      <Project>{90F4FCC8-AF60-942F-61F3-C963EA4D2FC1}</Project>
       <Name>Mirror.Components</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Examples.csproj">
-      <Project>{3AA52EE7-EEC1-7415-0129-D44F66114F83}</Project>
+      <Project>{D46A1F33-E3D1-DC84-B506-1D9F9CFA0E7C}</Project>
       <Name>Mirror.Examples</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.CompilerSymbols.csproj">
-      <Project>{C6A770B4-C7E2-4F4F-980B-8B975ECDEEEB}</Project>
+      <Project>{601DAF29-88C0-5120-94C2-3B96725F50B0}</Project>
       <Name>Mirror.CompilerSymbols</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Cloud.csproj">
-      <Project>{B6B914CA-8AAC-47C0-31FA-86D4124FC3EF}</Project>
+      <Project>{9F384016-5248-786C-4345-4C7F062E3E33}</Project>
       <Name>Mirror.Cloud</Name>
     </ProjectReference>
     <ProjectReference Include="Telepathy.csproj">
-      <Project>{EB326714-885F-D8D1-18F8-C16ED84B3AC6}</Project>
+      <Project>{6C7EC1A9-95FF-6934-C47C-BA2B8CD9585C}</Project>
       <Name>Telepathy</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Examples.Cloud.Pong.csproj">
-      <Project>{0D39A3F0-608D-ECF1-3A69-F0124CA7BBEB}</Project>
+      <Project>{A9AF32FF-86EB-0AD4-3D49-839AE66D7948}</Project>
       <Name>Mirror.Examples.Cloud.Pong</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.csproj">
-      <Project>{FC674896-F9AF-CF6D-89AD-2E48B835FEB1}</Project>
+      <Project>{5A5B1D17-1412-E43E-F70E-14F1805349AA}</Project>
       <Name>Mirror</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Editor.csproj">
-      <Project>{4B00E40C-B741-532C-93F8-AF724DE469A7}</Project>
+      <Project>{E1E39533-ABB3-7E63-09D6-FCFAC8061A52}</Project>
       <Name>Mirror.Editor</Name>
     </ProjectReference>
     <ProjectReference Include="kcp2k.csproj">
-      <Project>{417CEC3B-9FB6-0C27-A386-431395932153}</Project>
+      <Project>{68CF15BD-0EA9-AC1B-1B4A-8A239503F1F2}</Project>
       <Name>kcp2k</Name>
     </ProjectReference>
     <ProjectReference Include="Mirror.Examples.Cloud.GUI.csproj">
-      <Project>{726979D5-045C-C49A-DFE3-855792960DF4}</Project>
+      <Project>{F5C2DC01-6BB7-C5EE-93B5-EC93FA2CFDDB}</Project>
       <Name>Mirror.Examples.Cloud.GUI</Name>
     </ProjectReference>
     <ProjectReference Include="SimpleWebTransport.csproj">
-      <Project>{B1A3AB66-204F-AD01-6EC2-7F69DC60C2A3}</Project>
+      <Project>{61D59EE1-EB07-2D26-BF01-27856DCBB1CB}</Project>
       <Name>SimpleWebTransport</Name>
     </ProjectReference>
   </ItemGroup>
